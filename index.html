@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panadería Mendoza de Rosa Mendoza</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="css/accesibilidad.css">
+  <script src="js/accesibilidad.js" defer></script>
+  <script src="js/login.js" defer></script>
+</head>
+<body class="font-sans text-gray-800">
+
+  <!-- HEADER -->
+  <header class="bg-white shadow-md fixed w-full z-50">
+    <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <img src="img/logo.png" alt="Logo Panadería Mendoza" class="h-10 w-10 rounded-full">
+        <h1 class="text-xl font-bold text-principal">Panadería Mendoza de Rosa Mendoza</h1>
+      </div>
+      <nav class="hidden md:flex space-x-6 text-gray-700 font-medium">
+        <a href="#inicio" class="hover:text-principal">Inicio</a>
+        <a href="#productos" class="hover:text-principal">Productos</a>
+        <a href="#nosotros" class="hover:text-principal">Nosotros</a>
+        <a href="#contacto" class="hover:text-principal">Contacto</a>
+        <button id="ingresarBtn" class="bg-principal text-white px-4 py-2 rounded hover-bg-principal-dark">
+          Ingresar al sistema
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="inicio" class="relative h-screen flex items-center justify-center text-center text-white">
+    <img src="https://p4.wallpaperbetter.com/wallpaper/134/639/766/basket-bread-pastries-muffins-wallpaper-preview.jpg"
+         alt="Panadería" class="absolute inset-0 w-full h-full object-cover">
+    <div class="overlay absolute inset-0"></div>
+    <div class="relative z-10 px-6 fade-in">
+      <h2 class="text-4xl md:text-6xl font-bold mb-4 text-white">El sabor de casa, todos los días</h2>
+      <p class="text-lg mb-6 max-w-xl mx-auto text-white">Pan fresco, pasteles deliciosos y la mejor atención en la Panadería Mendoza de Rosa Mendoza.</p>
+      <button id="ingresarBtn1" class="bg-principal text-white px-4 py-2 rounded hover-bg-principal-dark">
+        Ingresar al sistema
+      </button>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS -->
+  <section id="productos" class="py-16 bg-gray-50 fade-in">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-principal mb-8">Productos Destacados</h2>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- PAN ARTESANAL -->
+        <div class="bg-white p-6 rounded-lg shadow card">
+          <div class="w-full h-40 flex items-center justify-center bg-white">
+            <img src="https://cdn-icons-png.flaticon.com/128/7093/7093198.png"
+                class="h-32 object-contain" alt="Pan Artesanal">
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Pan Artesanal</h3>
+          <p class="text-gray-600">Horneado cada mañana con recetas tradicionales.</p>
+        </div>
+
+        <!-- TORTA -->
+        <div class="bg-white p-6 rounded-lg shadow card">
+          <div class="w-full h-40 flex items-center justify-center bg-white">
+            <img src="https://cdn-icons-png.flaticon.com/128/2682/2682340.png"
+                class="h-32 object-contain" alt="Torta de Chocolate">
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Torta de Chocolate</h3>
+          <p class="text-gray-600">Suave, cremosa y perfecta para cualquier ocasión.</p>
+        </div>
+
+        <!-- GALLETAS -->
+        <div class="bg-white p-6 rounded-lg shadow card">
+          <div class="w-full h-40 flex items-center justify-center bg-white">
+            <img src="https://cdn-icons-png.flaticon.com/128/1047/1047711.png"
+                class="h-32 object-contain" alt="Galletas Caseras">
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Galletas Caseras</h3>
+          <p class="text-gray-600">Crujientes y con el toque dulce de la casa.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- NOSOTROS -->
+  <section id="nosotros" class="py-16 bg-white fade-in">
+    <div class="container mx-auto px-6 text-center md:text-left md:flex md:items-center md:space-x-10">
+      
+      <div class="flex justify-center md:justify-start mb-8 md:mb-0 md:w-1/2">
+        <img src="img/logo.png" 
+            class="rounded-lg shadow-lg w-48 md:w-64 lg:w-72 object-contain" 
+            alt="Panadería Mendoza">
+      </div>
+
+      <div class="md:w-1/2">
+        <h2 class="text-3xl font-bold text-principal mb-4">Sobre Nosotros</h2>
+        <p class="text-gray-700 leading-relaxed">
+          En <strong>Panadería Mendoza</strong> elaboramos nuestros productos con pasión, dedicación y los mejores ingredientes.  
+          Fundada por <strong>Rosa Mendoza</strong>, nuestra misión es compartir el auténtico sabor del pan y los postres caseros que han acompañado a generaciones de familias.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="py-16 bg-gray-50 fade-in">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-principal mb-6">Contáctanos</h2>
+      <p class="text-gray-700 mb-4">📍 Jr. Ayacucho 1301 - Cajamarca, Perú</p>
+      <p class="text-gray-700 mb-4">📞 +51 987 654 321</p>
+      <p class="text-gray-700 mb-6">✉️ panaderiamendoza@gmail.com</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-principal text-white py-4 text-center">
+    <p>&copy; 2025 Panadería Mendoza de Rosa Mendoza. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+
+
+  <!-- Menú de Accesibilidad -->
+  <link rel="stylesheet" href="css/accesibilidad.css">
+
+  <div id="accessibility-btn" title="Accesibilidad (Ctrl+U)">
+  <img src="https://cdn-icons-png.flaticon.com/128/16567/16567649.png" alt="Accesibilidad" id="accessibility-icon">
+  </div>
+
+  <div id="accessibility-menu" class="hidden">
+    <div class="menu-header">
+      <h3>Menú de Accesibilidad</h3>
+      <span id="close-menu">✕</span>
+    </div>
+    <div class="menu-options">
+      <button data-action="contraste">Contraste +</button>
+      <button data-action="resaltar">Resaltar enlaces</button>
+      <button data-action="texto">Agrandar texto</button>
+      <button data-action="espaciado">Espaciado texto</button>
+      <button data-action="detener">Detener animaciones</button>
+      <button data-action="ocultar">Ocultar imágenes</button>
+      <button data-action="dislexia">Apto dislexia</button>
+      <button data-action="cursor">Cursor</button>
+      <button data-action="saturacion">Saturación</button>
+      <button data-action="reset">♻ Restablecer</button>
+    </div>
+  </div>
+  <!-- LOGIN MODAL -->
+  <div id="loginModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Panadería Mendoza de Rosa Mendoza</h2>
+      <p>Inicia sesión para acceder al sistema</p>
+
+      <form id="loginForm">
+        <label>Usuario</label>
+        <input type="text" id="usuario" placeholder="Ingresa tu usuario" required>
+
+        <label>Contraseña</label>
+        <input type="password" id="password" placeholder="Ingresa tu contraseña" required>
+
+        <button type="submit" class="btn-coral">Iniciar Sesión</button>
+      </form>
+
+      <a id="forgotLink" class="link">Olvidé mi contraseña</a>
+    </div>
+  </div>
+
+  <!-- RECUPERAR CONTRASEÑA MODAL -->
+  <div id="recoverModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Recuperar Contraseña</h2>
+      <p>Ingresa tu email o usuario para recibir instrucciones.</p>
+
+      <form id="recoverForm">
+        <label>Email o Usuario</label>
+        <input type="text" id="email" placeholder="usuario@correo.com" required>
+
+        <button type="submit" class="btn-coral">Enviar Instrucciones</button>
+      </form>
+
+      <a id="closeRecover" class="link">Cerrar</a>
+    </div>
+  </div>
+
+  <script src="js/accesibilidad.js" defer></script>
+
+</body>
+</html>

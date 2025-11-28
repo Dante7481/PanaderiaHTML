@@ -1,0 +1,94 @@
+/* ====== Estilos del Menú de Accesibilidad ====== */
+#accessibility-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px; /* 👈 Mueve el botón a la izquierda */
+  background-color: #FF6961;
+  color: white;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  font-size: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+#accessibility-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Menú ahora se abre hacia arriba a la izquierda */
+#accessibility-menu {
+  position: fixed;
+  bottom: 90px;
+  left: 20px; /* 👈 también se mueve a la izquierda */
+  width: 270px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  z-index: 10000;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  transition: opacity 0.3s ease;
+}
+
+#accessibility-menu.hidden {
+  display: none;
+}
+
+/* Cabecera del menú */
+.menu-header {
+  background-color: #FF6961;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu-header span {
+  cursor: pointer;
+}
+button:focus,
+a:focus,
+input:focus {
+  outline: 3px solid #FF6961; /* Coral */
+  outline-offset: 3px;
+}
+
+/* Opciones del menú */
+.menu-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  padding: 10px;
+}
+.menu-options button {
+  background-color: #FFE1DF;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.menu-options button:hover {
+  background-color: #FF6961;
+  color: white;
+}
+
+/* ====== Efectos de accesibilidad ====== */
+body.high-contrast { filter: invert(1) hue-rotate(180deg); }
+body.resaltar a { text-decoration: underline wavy #FF6961; background-color: #fff4f3; }
+body.texto-grande { font-size: 1.2em; }
+body.espaciado { letter-spacing: 0.08em; line-height: 1.8; }
+body.sin-animaciones * { animation: none !important; transition: none !important; }
+body.ocultar-img img { visibility: hidden; }
+body.dislexia { font-family: "OpenDyslexic", Arial, sans-serif !important; }
+body.cursor { cursor: url('https://cur.cursors-4u.net/cursors/cur-9/cur261.cur'), auto !important; }
+body.saturacion { filter: saturate(1.5); }

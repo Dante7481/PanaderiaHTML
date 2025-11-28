@@ -1,0 +1,49 @@
+<!-- Menú de Accesibilidad -->
+<link rel="stylesheet" href="accesibilidad.css">
+
+<!-- Botón flotante -->
+<button 
+  id="accessibility-btn" 
+  class="accessibility-trigger"
+  aria-label="Abrir menú de accesibilidad"
+  title="Accesibilidad (Ctrl+U)"
+>
+  ♿
+</button>
+
+<!-- Contenedor del menú -->
+<div 
+  id="accessibility-menu" 
+  class="hidden" 
+  role="dialog" 
+  aria-hidden="true"
+  aria-labelledby="accessibility-title"
+>
+
+  <div class="menu-header">
+    <h3 id="accessibility-title">Menú de Accesibilidad</h3>
+
+    <button 
+      id="close-menu" 
+      class="close-accessibility" 
+      aria-label="Cerrar menú de accesibilidad"
+    >
+      ✕
+    </button>
+  </div>
+
+  <div class="menu-options">
+    <button data-action="contraste">Contraste +</button>
+    <button data-action="resaltar">Resaltar enlaces</button>
+    <button data-action="texto">Agrandar texto</button>
+    <button data-action="espaciado">Espaciado texto</button>
+    <button data-action="detener">Detener animaciones</button>
+    <button data-action="ocultar">Ocultar imágenes</button>
+    <button data-action="dislexia">Apto dislexia</button>
+    <button data-action="cursor">Cursor grande</button>
+    <button data-action="saturacion">Saturación</button>
+    <button data-action="reset">♻ Restablecer</button>
+  </div>
+</div>
+
+<script src="accesibilidad.js" defer></script>

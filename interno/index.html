@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panadería Mendoza de Rosa Mendoza - Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/accesibilidad.js" defer></script>
+  <style>
+    .sidebar-transition { transition: all 0.3s ease; }
+    @media (max-width: 768px) {
+      .sidebar { transform: translateX(-100%); }
+      .sidebar.active { transform: translateX(0); }
+    }
+    .bg-principal { background-color: #FF6961; }
+    .bg-principal-dark { background-color: #e25b54; }
+    .bg-principal-light { background-color: #ffe1e0; }
+    .text-principal { color: #FF6961; }
+  </style>
+  <script src="main.js" defer></script>
+  <script src="js/logout.js" defer></script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+  <!-- Menú de Accesibilidad -->
+  <link rel="stylesheet" href="css/accesibilidad.css">
+
+  <div id="accessibility-btn" title="Accesibilidad (Ctrl+U)">
+  <img src="https://cdn-icons-png.flaticon.com/128/16567/16567649.png" alt="Accesibilidad" id="accessibility-icon">
+  </div>
+
+  <div id="accessibility-menu" class="hidden">
+    <div class="menu-header">
+      <h3>Menú de Accesibilidad</h3>
+      <span id="close-menu">✕</span>
+    </div>
+    <div class="menu-options">
+      <button data-action="contraste">Contraste +</button>
+      <button data-action="resaltar">Resaltar enlaces</button>
+      <button data-action="texto">Agrandar texto</button>
+      <button data-action="espaciado">Espaciado texto</button>
+      <button data-action="detener">Detener animaciones</button>
+      <button data-action="ocultar">Ocultar imágenes</button>
+      <button data-action="dislexia">Apto dislexia</button>
+      <button data-action="cursor">Cursor</button>
+      <button data-action="saturacion">Saturación</button>
+      <button data-action="reset"> Restablecer</button>
+    </div>
+  </div>
+  <!-- Header -->
+  <header class="bg-principal text-white shadow-lg">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <button id="menuToggle" class="md:hidden text-2xl">☰</button>
+
+        <!-- LOGO + NOMBRE -->
+        <div class="flex items-center space-x-3">
+          <img src="img/logo.png" alt="Logo Panadería Mendoza" class="w-10 h-10 rounded-full border-2 border-white shadow-sm">
+          <h1 class="text-2xl font-bold tracking-wide">Panadería Mendoza de Rosa Mendoza</h1>
+        </div>
+      </div>
+
+      <div class="flex items-center space-x-4">
+        <div class="relative">
+          <button class="p-2 bg-principal-dark rounded-full hover:bg-[#cc5049]">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 17h5l-1.405-1.405A2.032 2.032 0 
+                0118 14.158V11a6.002 6.002 0 
+                00-4-5.659V5a2 2 0 
+                10-4 0v.341C7.67 6.165 6 
+                8.388 6 11v3.159c0 .538-.214 1.055-.595 
+                1.436L4 17h5m6 0v1a3 3 0 
+                11-6 0v-1m6 0H9"></path>
+            </svg>
+            <span
+              class="absolute top-0 right-0 bg-red-500 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">3</span>
+          </button>
+        </div>
+        <div class="hidden md:block">
+          <span class="text-sm">Bienvenido, <strong>Administrador</strong></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="flex">
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar bg-white w-64 min-h-screen shadow-lg sidebar-transition fixed md:relative z-50">
+      <nav class="p-4">
+        <div class="mb-8">
+          <h2 class="text-lg font-semibold text-gray-700 mb-4">Menú Principal</h2>
+          <ul class="space-y-2">
+            <li>
+              <a href="index.html" class="flex items-center p-3 text-principal bg-principal-light rounded-lg hover:bg-[#ffd1cf]">
+                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 
+                    0 001 1h3m10-11l2 2m-2-2v10a1 1 
+                    0 01-1 1h-3m-6 0a1 1 
+                    0 001-1v-4a1 1 
+                    0 011-1h2a1 1 0 
+                    011 1v4a1 1 0 001 1m-6 0h6"></path>
+                </svg>
+                Dashboard
+              </a>
+            </li>
+            <li>
+              <a href="productos.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M16 11V7a4 4 0 
+                    00-8 0v4M5 9h14l1 
+                    12H4L5 9z"></path>
+                </svg>
+                Productos
+              </a>
+            </li>
+            <li>
+              <a href="ventas.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 5H7a2 2 0 
+                    00-2 2v12a2 2 0 
+                    002 2h10a2 2 0 
+                    002-2V7a2 2 0 
+                    00-2-2h-2M9 5a2 2 0 
+                    002 2h2a2 2 0 
+                    002-2M9 5a2 2 0 
+                    012-2h2a2 2 0 
+                    012 2"></path>
+                </svg>
+                Ventas
+              </a>
+            </li>
+            <li>
+              <a href="inventario.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 19v-6a2 2 0 
+                    00-2-2H5a2 2 0 
+                    00-2 2v6a2 2 0 
+                    002 2h2a2 2 0 
+                    002-2zm0 0V9a2 2 0 
+                    012-2h2a2 2 0 
+                    012 2v10m-6 0a2 2 
+                    0 002 2h2a2 2 0 
+                    002-2m0 0V5a2 2 0 
+                    012-2h2a2 2 0 
+                    012 2v14a2 2 0 
+                    01-2 2h-2a2 2 0 
+                    01-2-2z"></path>
+                </svg>
+                Inventario
+              </a>
+            </li>
+            <li>
+              <a href="reportes.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 17v-2m3 2v-4m3 4v-6m2 
+                    10H7a2 2 0 
+                    01-2-2V5a2 2 0 
+                    012-2h5.586a1 1 0 
+                    01.707.293l5.414 
+                    5.414a1 1 0 
+                    01.293.707V19a2 2 0 
+                    01-2 2z"></path>
+                </svg>
+                Reportes
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-semibold text-gray-700 mb-4">Configuración</h2>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10.325 4.317c.426-1.756 
+                    2.924-1.756 3.35 
+                    0a1.724 1.724 0 
+                    002.573 1.066c1.543-.94 
+                    3.31.826 2.37 
+                    2.37a1.724 1.724 0 
+                    001.065 2.572c1.756.426 
+                    1.756 2.924 0 
+                    3.35a1.724 1.724 0 
+                    00-1.066 2.573c.94 
+                    1.543-.826 3.31-2.37 
+                    2.37a1.724 1.724 0 
+                    00-2.572 1.065c-.426 
+                    1.756-2.924 1.756-3.35 
+                    0a1.724 1.724 0 
+                    00-2.573-1.066c-1.543.94-3.31
+                    -.826-2.37-2.37a1.724 
+                    1.724 0 00-1.065-2.572c-1.756
+                    -.426-1.756-2.924 
+                    0-3.35a1.724 1.724 0 
+                    001.066-2.573c-.94-1.543.826-3.31 
+                    2.37-2.37.996.608 2.296.07 
+                    2.572-1.065z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15 12a3 3 0 
+                    11-6 0 3 3 0 016 
+                    0z"></path>
+                </svg>
+                Configuración
+              </a>
+            </li>
+            <li>
+              <a id="logoutBtn" href="#" 
+                class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100 cursor-pointer">
+                  <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M17 16l4-4m0 0l-4-4m4 
+                        4H7m6 4v1a3 3 0 
+                        01-3 3H6a3 3 0 
+                        01-3-3V7a3 3 0 
+                        013-3h4a3 3 0 
+                        013 3v1"></path>
+                  </svg>
+                  Cerrar Sesión
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6 md:ml-0">
+      <h2 class="text-2xl font-bold mb-6 text-principal">Dashboard General</h2>
+
+      <!-- Estadísticas -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+        <div class="bg-white shadow p-4 rounded-lg flex flex-col items-center justify-center">
+          <p class="text-gray-600">Ventas Hoy</p>
+          <p class="text-2xl font-bold text-green-600">S/150</p>
+        </div>
+        <div class="bg-white shadow p-4 rounded-lg flex flex-col items-center justify-center">
+          <p class="text-gray-600">Productos Vendidos</p>
+          <p class="text-2xl font-bold text-blue-600">80</p>
+        </div>
+        <div class="bg-white shadow p-4 rounded-lg flex flex-col items-center justify-center">
+          <p class="text-gray-600">Órdenes Hoy</p>
+          <p class="text-2xl font-bold text-orange-500">65</p>
+        </div>
+        <div class="bg-white shadow p-4 rounded-lg flex flex-col items-center justify-center">
+          <p class="text-gray-600">Stock Bajo</p>
+          <p class="text-2xl font-bold text-red-500">8</p>
+        </div>
+      </div>
+
+      <!-- Acciones Rápidas -->
+      <div class="bg-white p-6 rounded-lg shadow mb-6">
+        <h3 class="text-lg font-semibold mb-4">Acciones Rápidas</h3>
+        <div class="flex flex-wrap gap-4">
+          <a href="ventas.html" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-lg shadow">+ Nueva Venta</a>
+          <a href="productos.html" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg shadow">+ Agregar Producto</a>
+          <a href="inventario.html" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg shadow">Ver Inventario</a>
+          <a href="reportes.html" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg shadow">Generar Reporte</a>
+        </div>
+      </div>
+
+      <!-- Ventas Recientes -->
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h3 class="text-lg font-semibold mb-4">Ventas Recientes</h3>
+        <div class="space-y-4">
+          <div class="flex justify-between border-b pb-2">
+            <div>
+              <p class="font-semibold">Orden #0045</p>
+              <p class="text-gray-600 text-sm">Pan Chafla x10, Biscochos x5</p>
+            </div>
+            <p class="text-green-600 font-bold">S/7.00</p>
+          </div>
+          <div class="flex justify-between border-b pb-2">
+            <div>
+              <p class="font-semibold">Orden #0046</p>
+              <p class="text-gray-600 text-sm">Torta Chocolate, Galletas x6</p>
+            </div>
+            <p class="text-green-600 font-bold">S/32.50</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>
